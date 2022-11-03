@@ -29,4 +29,16 @@ class Rider extends Human
         return $this;
     }
 
+    public function __toString(): string
+    {
+        return "Détail de l'Humain :\n
+         Nom : {$this->getName()}\n
+         Adresse : {$this->getAddress()}\n
+         Rue : {$this->getStreet()}\n
+         Code postal : {$this->getPostcode()}\n
+         Ville : {$this->getCity()}\n
+         Catégorie : {$this->getCategorie()}\n
+         Type de jeu : {$this->getGameType()->getNom()}\n";
+    }
+
 }
