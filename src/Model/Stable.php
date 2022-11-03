@@ -134,6 +134,6 @@ class Stable
         Rue : {$this->getStreet()}\n
         Code postal : {$this->getPostcode()}\n
         Ville : {$this->getCity()}\n
-        Manager : {$this->getManager()}\n";
+        Manager : {$this->getManager()->getName()}\n";
     }
 }

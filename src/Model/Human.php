@@ -113,11 +113,11 @@ abstract class Human
     }
 
     /**
-     * @return Categorie
+     * @return string
      */
-    public function getCategorie(): Categorie
+    public function getCategorie(): string
     {
-        return $this->categorie;
+        return $this->categorie->getNom();
     }
 
     /**
