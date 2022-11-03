@@ -2,12 +2,11 @@
 
 namespace App\Model;
 
-class Horse extends Categorie
+class Horse extends Equine
 {
-    public function __construct()
+    public function __construct(string $id, string $color, int $water, Rider $rider)
     {
-        $this->setNom("Horse");
+        parent::__construct($id, $color, $water, $rider, new HorseCategorie());
     }
-
 
 }
