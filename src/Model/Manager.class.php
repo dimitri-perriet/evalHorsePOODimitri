@@ -9,5 +9,4 @@ class Manager extends Human
         parent::__construct($name, $address, $street, $postcode, $city, new ManagerCategorie());
     }
 
-
 }
