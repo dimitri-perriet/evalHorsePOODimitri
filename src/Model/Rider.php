@@ -5,10 +5,12 @@ namespace App\Model;
 class Rider extends Human
 {
     private Capabilitie $GameType;
+    private int $nbEquine;
     public function __construct(string $name, string $address, string $street, string $postcode, string $city, Capabilitie $GameType)
     {
         parent::__construct($name, $address, $street, $postcode, $city, new RiderCategorie());
-        $this->setGameType($GameType);
+        $this->setGameType($GameType)
+            ->setNbEquine(0);
     }
 
     /**
@@ -28,6 +30,26 @@ class Rider extends Human
         $this->GameType = $GameType;
         return $this;
     }
+
+    /**
+     * @return int
+     */
+    public function getNbEquine(): int
+    {
+        return $this->nbEquine;
+    }
+
+    /**
+     * @param int $nbEquine
+     * @return Rider
+     */
+    public function setNbEquine(int $nbEquine): Rider
+    {
+        $this->nbEquine = $nbEquine;
+        return $this;
+    }
+
+
 
     public function __toString(): string
     {

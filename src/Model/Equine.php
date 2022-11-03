@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use Exception;
+
 abstract class Equine
 {
     private string $id;
@@ -88,8 +90,13 @@ abstract class Equine
      */
     public function setRider(Rider $rider): Equine
     {
-        $this->rider = $rider;
-        return $this;
+        if ($rider->getNbEquine() < 5) {
+            $this->rider = $rider;
+            $rider->setnbEquine($rider->getNbEquine() + 1);
+            return $this;
+        } else {
+            throw new Exception("Le cavalier a déjà 5 chevaux");
+        }
     }
 
     /**
