@@ -11,15 +11,19 @@ abstract class Equine
     private int $water;
     private Rider $rider;
     private Categorie $category;
+    private string $nom;
+    static private int $nbHorse = 1;
 
 
-    public function __construct(string $id, string $color, int $water, Rider $rider, Categorie $category)
+    public function __construct(string $nom, string $color, int $water, Rider $rider, Categorie $category)
     {
-        $this->setId($id)
+        $this->setNom($nom)
             ->setColor($color)
             ->setWater($water)
             ->setRider($rider)
-            ->setCategory($category);
+            ->setCategory($category)
+            ->setId($color,$nom);
+        self::$nbHorse++;
     }
 
     /**
@@ -31,12 +35,13 @@ abstract class Equine
     }
 
     /**
-     * @param string $id
+     * Generate an id for the horse
+     * @param string $color, string $nom
      * @return Equine
      */
-    public function setId(string $id): Equine
+    private function setId(string $color, string $nom): Equine
     {
-        $this->id = $id;
+        $this->id = "000-" . $nom[0] . "-" . $color[0] . "-" . $this->getnbHorse();
         return $this;
     }
 
@@ -52,7 +57,7 @@ abstract class Equine
      * @param string $color
      * @return Equine
      */
-    public function setColor(string $color): Equine
+    private function setColor(string $color): Equine
     {
         $this->color = $color;
         return $this;
@@ -70,7 +75,7 @@ abstract class Equine
      * @param int $water
      * @return Equine
      */
-    public function setWater(int $water): Equine
+    private function setWater(int $water): Equine
     {
         $this->water = $water;
         return $this;
@@ -88,7 +93,7 @@ abstract class Equine
      * @param Rider $rider
      * @return Equine
      */
-    public function setRider(Rider $rider): Equine
+    private function setRider(Rider $rider): Equine
     {
         if ($rider->getNbEquine() < 5) {
             $this->rider = $rider;
@@ -111,11 +116,48 @@ abstract class Equine
      * @param Categorie $category
      * @return Equine
      */
-    public function setCategory(Categorie $category): Equine
+    private function setCategory(Categorie $category): Equine
     {
         $this->category = $category;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     * @return Equine
+     */
+    private function setNom(string $nom): Equine
+    {
+        $this->nom = $nom;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public static function getNbHorse(): int
+    {
+        return self::$nbHorse;
+    }
+
+    /**
+     * @param int $nbHorse
+     */
+    private static function setNbHorse(int $nbHorse): void
+    {
+        self::$nbHorse = $nbHorse;
+    }
+
+
+
 
     public function __toString(): string
     {
