@@ -104,9 +104,14 @@ abstract class Event
 
     public function __ToString(): string
     {
-        $string = "L'évenement dispose de " . $this->MaxCommitments . " places et de " . $this->MaxWater . " litres d'eau. Les chevaux inscrits sont : \n";
-        foreach ($this->commitments as $commitment) {
-            $string .= $commitment->getId() . " ";
+        $string = "L'évenement dispose de " . $this->MaxCommitments . " places et de " . $this->MaxWater . " litres d'eau. \n";
+        if (count($this->commitments) > 0) {
+            $string .= "Les chevaux inscrits sont : \n";
+            foreach ($this->commitments as $commitment) {
+                $string .= $commitment->getId() . "\n";
+            }
+        } else {
+            $string .= "Il n'y a aucun cheval inscrit à l'évenement. \n";
         }
         return $string;
     }
