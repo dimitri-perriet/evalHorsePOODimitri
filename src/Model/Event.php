@@ -30,7 +30,7 @@ abstract class Event
         if (count($this->commitments) < $this->MaxCommitments) {
             foreach ($this->commitments as $commitment) {
                 if ($commitment->getId() === $horse->getId()) {
-                    throw new Exception("Le cheval est déjà inscrit.");
+                    throw new Exception("Le cheval " . $horse->getId() . " est déjà inscrit.");
                 }
                 $this->tmpWater += $commitment->getWater();
                 if ($this->tmpWater + $horse->getWater() > $this->MaxWater) {

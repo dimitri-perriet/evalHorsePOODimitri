@@ -17,8 +17,8 @@ use App\Controller\ExecWithSameHorseEvent;
 
 
 //Il est prévu dans ce test qu'aucun soucis d'initilisation ne se produise et qu'un évenement soit lancé
-//$test1= new ExecWithoutError();
-//$test1->execute();
+$test1= new ExecWithoutError();
+$test1->execute();
 
 
 //Il est prévu dans ce test qu'un soucis d'initilisation se produise en raison de la réinscription d'un cheval
@@ -31,8 +31,8 @@ use App\Controller\ExecWithSameHorseEvent;
 
 
 //Il est prévu dans ce test qu'un soucis d'initilisation se produise en raison d'une incapacité par l'évenement à fournir de l'eau
-$test4= new ExecWithNoMoreWater();
-$test4->execute();
+//$test4= new ExecWithNoMoreWater();
+//$test4->execute();
 
 
 
