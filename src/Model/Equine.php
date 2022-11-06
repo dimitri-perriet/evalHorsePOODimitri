@@ -163,6 +163,7 @@ abstract class Equine
     {
         return "Détail de l'Equin :\n
          ID : {$this->getId()}\n
+         Nom : {$this->getNom()}\n
          Couleur : {$this->getColor()}\n
          Niveau d'eau : {$this->getWater()}\n
          Cavalier : {$this->getRider()->getName()}\n

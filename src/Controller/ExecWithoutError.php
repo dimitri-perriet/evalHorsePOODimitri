@@ -24,9 +24,9 @@ class ExecWithoutError
         echo $rider;
 
         //Création de chevaux, poney et Shetiland
-        $cheval1 = new \App\Model\Horse("Lesla", "blanc", 500, $rider);
-        $cheval2 = new \App\Model\Poney("Tesla", "blanc", 200, $rider);
-        $cheval3 = new \App\Model\Sheitland("Simbo", "blanc", 501, $rider);
+        $cheval1 = new \App\Model\Horse("Lesla", "White", 500, $rider);
+        $cheval2 = new \App\Model\Poney("Tesla", "Grey", 200, $rider);
+        $cheval3 = new \App\Model\Sheitland("Simbo", "Pie", 501, $rider);
 
         echo $cheval1;
         echo $cheval2;

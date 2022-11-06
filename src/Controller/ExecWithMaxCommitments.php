@@ -24,9 +24,9 @@ class ExecWithMaxCommitments
         echo $rider;
 
         //Création de chevaux, poney et Shetiland
-        $cheval1 = new \App\Model\Horse("001-d-B-1", "blanc", 500, $rider);
-        $cheval2 = new \App\Model\Poney("002-d-B-2", "blanc", 200, $rider);
-        $cheval3 = new \App\Model\Sheitland("003-d-B-3", "blanc", 501, $rider);
+        $cheval1 = new \App\Model\Horse("Lesla", "White", 500, $rider);
+        $cheval2 = new \App\Model\Poney("Tesla", "Grey", 200, $rider);
+        $cheval3 = new \App\Model\Sheitland("Simbo", "Pie", 501, $rider);
 
         echo $cheval1;
         echo $cheval2;
