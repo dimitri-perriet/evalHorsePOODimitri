@@ -18,7 +18,12 @@ abstract class Event
     }
 
 
-
+    /**
+     * Subscribe a horse to the event, check if the horse is already subscribed, if the event is full and if the event has enough water
+     * @param Equine $horse
+     * @return void
+     * @throws Exception
+     */
     public function subscribeHorse(Equine $horse): void
     {
         $this->setTmpWater(0);
@@ -33,7 +38,7 @@ abstract class Event
                 }
             }
             $this->commitments[] = $horse;
-            echo  "Le cheval " . $horse->getId() . " a été inscrit à l'évenement avec succès. \n";
+            echo  "Le cheval " . $horse->getId() . " portant le nom " . $horse->getNom() . " a été inscrit à l'évenement avec succès. \n";
         } else {
             throw new Exception("Le nombre maximum de chevaux est atteint");
         }
@@ -108,7 +113,7 @@ abstract class Event
         if (count($this->commitments) > 0) {
             $string .= "Les chevaux inscrits sont : \n";
             foreach ($this->commitments as $commitment) {
-                $string .= $commitment->getId() . "\n";
+                $string .= $commitment->getId() . " dit " . $commitment->getNom() . "\n";
             }
         } else {
             $string .= "Il n'y a aucun cheval inscrit à l'évenement. \n";

@@ -12,7 +12,7 @@ class ExecWithoutError
         // On instancie notre application
 
         //Création d'un manager
-        $manager= new Manager("Dimitri","49 Avenue de la côte de Nacre","Cote","14000","Caen");
+        $manager= new Manager("Cémoi","49 Avenue de la côte de Nacre","Cote","14000","Caen");
         echo $manager;
 
         //Création d'un stable
