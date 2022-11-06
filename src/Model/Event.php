@@ -34,13 +34,13 @@ abstract class Event
                 }
                 $this->tmpWater += $commitment->getWater();
                 if ($this->tmpWater + $horse->getWater() > $this->MaxWater) {
-                    throw new Exception("Le cheval ne peut pas être inscrit car l'évenement ne dispose pas de suffisament d'eau.");
+                    throw new Exception("Le cheval " . $horse->getId() . " ne peut pas être inscrit car l'évenement ne dispose pas de suffisament d'eau.");
                 }
             }
             $this->commitments[] = $horse;
             echo  "Le cheval " . $horse->getId() . " portant le nom " . $horse->getNom() . " a été inscrit à l'évenement avec succès. \n";
         } else {
-            throw new Exception("Le nombre maximum de chevaux est atteint");
+            throw new Exception("Le nombre maximum de chevaux admis à l'évenement est atteint.");
         }
     }
 

@@ -7,7 +7,11 @@ use App\Model\Stable;
 
 class ExecWithoutError
 {
-    public function execute()
+
+    /**
+     * Execute the program
+     */
+    public function execute() : void
     {
         // On instancie notre application
 

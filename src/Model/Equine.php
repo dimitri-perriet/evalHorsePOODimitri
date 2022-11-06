@@ -90,6 +90,7 @@ abstract class Equine
     }
 
     /**
+     * Set a Rider and check if the rider has already 5 horse
      * @param Rider $rider
      * @return Equine
      */

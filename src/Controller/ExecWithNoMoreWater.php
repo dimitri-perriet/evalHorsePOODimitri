@@ -8,10 +8,11 @@ use App\Model\Stable;
 class ExecWithNoMoreWater
 {
 
+
     /**
-     * @throws \Exception
+     * Execute the program
      */
-    public function execute()
+    public function execute() : void
     {
         // On instancie notre application
 
@@ -29,27 +30,18 @@ class ExecWithNoMoreWater
 
         //Création de chevaux, poney et Shetiland
         $cheval1 = new \App\Model\Horse("Lesla", "White", 500, $rider);
-        $cheval2 = new \App\Model\Poney("Tesla", "Grey", 200, $rider);
+        $cheval2 = new \App\Model\Poney("Tesla", "Grey", 100, $rider);
         $cheval3 = new \App\Model\Sheitland("Simbo", "Pie", 501, $rider);
 
         echo $cheval1;
         echo $cheval2;
         echo $cheval3;
 
-        //Création d'un événement
-        $event1 = new \App\Model\Testevent(2, 1000);
-        echo $event1;
-
-        //Inscription d'un cheval à un événement
-        $event1->subscribeHorse($cheval1);
-        echo $event1;
-        $event1->subscribeHorse($cheval2);
-        echo $event1;
-
-        $event2 = new \App\Model\Testevent(2, 600);
+        $event2 = new \App\Model\Testevent(2, 550);
         //Tentative d'inscription alors qu'il n'y a pas assez d'eau : ERREUR
         $event2->subscribeHorse($cheval1);
         $event2->subscribeHorse($cheval2);
+        echo $event2;
     }
 
 }

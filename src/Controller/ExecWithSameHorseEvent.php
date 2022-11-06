@@ -8,7 +8,10 @@ use App\Model\Stable;
 class ExecWithSameHorseEvent
 {
 
-    public function execute()
+    /**
+     * Execute the program
+     */
+    public function execute() : void
     {
         // On instancie notre application
 
