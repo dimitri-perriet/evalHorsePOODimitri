@@ -28,9 +28,9 @@ $test1->execute();
 //$test3= new ExecWithMaxCommitments();
 //$test3->execute();
 
-echo "Nous allons maintenant tester l'erreur de dépassement du l'eau disponible à l'évenement \n";
-$test4= new ExecWithNoMoreWater();
-$test4->execute();
+//echo "Nous allons maintenant tester l'erreur de dépassement du l'eau disponible à l'évenement \n";
+//$test4= new ExecWithNoMoreWater();
+//$test4->execute();
 
 
 

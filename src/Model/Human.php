@@ -34,7 +34,7 @@ abstract class Human
      * @param string $name
      * @return Human
      */
-    public function setName(string $name): Human
+    private function setName(string $name): Human
     {
         $this->name = $name;
         return $this;
@@ -52,7 +52,7 @@ abstract class Human
      * @param string $address
      * @return Human
      */
-    public function setAddress(string $address): Human
+    private function setAddress(string $address): Human
     {
         $this->address = $address;
         return $this;
@@ -70,7 +70,7 @@ abstract class Human
      * @param string $street
      * @return Human
      */
-    public function setStreet(string $street): Human
+    private function setStreet(string $street): Human
     {
         $this->street = $street;
         return $this;
@@ -88,7 +88,7 @@ abstract class Human
      * @param string $postcode
      * @return Human
      */
-    public function setPostcode(string $postcode): Human
+    private function setPostcode(string $postcode): Human
     {
         $this->postcode = $postcode;
         return $this;
@@ -106,7 +106,7 @@ abstract class Human
      * @param string $city
      * @return Human
      */
-    public function setCity(string $city): Human
+    private function setCity(string $city): Human
     {
         $this->city = $city;
         return $this;
@@ -124,7 +124,7 @@ abstract class Human
      * @param Categorie $categorie
      * @return Human
      */
-    public function setCategorie(Categorie $categorie): Human
+    private function setCategorie(Categorie $categorie): Human
     {
         $this->categorie = $categorie;
         return $this;

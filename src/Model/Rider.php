@@ -25,7 +25,7 @@ class Rider extends Human
      * @param Capabilitie $GameType
      * @return Rider
      */
-    public function setGameType(Capabilitie $GameType): Rider
+    private function setGameType(Capabilitie $GameType): Rider
     {
         $this->GameType = $GameType;
         return $this;
