@@ -6,7 +6,7 @@ class PoneyCategorie extends Categorie
 {
     public function __construct()
     {
-        $this->setNom("Poney");
+        parent::__construct("Poney");
     }
 
 }

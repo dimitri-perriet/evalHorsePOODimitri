@@ -8,8 +8,9 @@ abstract class Categorie
     // Propriétés
     protected string $nom;
 
-    public function __construct()
+    public function __construct(string $nom)
     {
+        $this->setNom($nom);
     }
 
     /**

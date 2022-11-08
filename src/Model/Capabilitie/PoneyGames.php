@@ -6,7 +6,7 @@ class PoneyGames extends Capabilitie
 {
     public function __construct()
     {
-        $this->setNom("Poney Games");
+        parent::__construct("Poney Games");
     }
 
 

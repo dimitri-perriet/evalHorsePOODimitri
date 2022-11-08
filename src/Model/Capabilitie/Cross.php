@@ -6,7 +6,7 @@ class Cross extends Capabilitie
 {
     public function __construct()
     {
-        $this->setNom("Cross");
+        parent::__construct("Cross");
     }
 
 

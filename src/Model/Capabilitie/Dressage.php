@@ -6,7 +6,7 @@ class Dressage extends Capabilitie
 {
     public function __construct()
     {
-        $this->setNom("Dressage");
+        parent::__construct("Dressage");
     }
 
 }
