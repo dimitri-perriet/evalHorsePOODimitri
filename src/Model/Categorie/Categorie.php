@@ -6,29 +6,29 @@ abstract class Categorie
 {
 
     // Propriétés
-    protected string $nom;
+    protected string $Name;
 
-    public function __construct(string $nom)
+    public function __construct(string $name)
     {
-        $this->setNom($nom);
+        $this->setName($name);
     }
 
     /**
-     * Get the value of nom
+     * Get the value of name
      */
-    public function getNom(): string
+    public function getName(): string
     {
-        return $this->nom;
+        return $this->name;
     }
 
     /**
-     * Set the value of nom
+     * Set the value of name
      *
      * @return  self
      */
-    protected function setNom($nom): self
+    protected function setName($name): self
     {
-        $this->nom = $nom;
+        $this->name = $name;
 
         return $this;
     }

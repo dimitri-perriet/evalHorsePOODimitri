@@ -39,7 +39,7 @@ abstract class Event
                 }
             }
             $this->commitments[] = $horse;
-            echo  "Le cheval " . $horse->getId() . " portant le nom " . $horse->getNom() . " a été inscrit à l'évenement avec succès. \n";
+            echo  "Le cheval " . $horse->getId() . " portant le nom " . $horse->getName() . " a été inscrit à l'évenement avec succès. \n";
         } else {
             throw new Exception("Le nombre maximum de chevaux admis à l'évenement est atteint.");
         }
@@ -114,7 +114,7 @@ abstract class Event
         if (count($this->commitments) > 0) {
             $string .= "Les chevaux inscrits sont : \n";
             foreach ($this->commitments as $commitment) {
-                $string .= $commitment->getId() . " dit " . $commitment->getNom() . "\n";
+                $string .= $commitment->getId() . " dit " . $commitment->getName() . "\n";
             }
         } else {
             $string .= "Il n'y a aucun cheval inscrit à l'évenement. \n";

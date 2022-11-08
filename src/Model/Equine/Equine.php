@@ -14,18 +14,18 @@ abstract class Equine
     private int $water;
     private Rider $rider;
     private Categorie $category;
-    private string $nom;
+    private string $name;
     static private int $nbHorse = 1;
 
 
-    public function __construct(string $nom, Color $color, int $water, Rider $rider, Categorie $category)
+    public function __construct(string $name, Color $color, int $water, Rider $rider, Categorie $category)
     {
-        $this->setNom($nom)
+        $this->setName($name)
             ->setColor($color)
             ->setWater($water)
             ->setRider($rider)
             ->setCategory($category)
-            ->setId($color,$nom);
+            ->setId($color,$name);
         self::$nbHorse++;
     }
 
@@ -129,18 +129,18 @@ abstract class Equine
     /**
      * @return string
      */
-    public function getNom(): string
+    public function getName(): string
     {
-        return $this->nom;
+        return $this->name;
     }
 
     /**
      * @param string $nom
      * @return Equine
      */
-    private function setNom(string $nom): Equine
+    private function setName(string $name): Equine
     {
-        $this->nom = $nom;
+        $this->name = $name;
         return $this;
     }
 
@@ -156,11 +156,11 @@ abstract class Equine
     {
         return "Détail de l'Equin :\n
          ID : {$this->getId()}\n
-         Nom : {$this->getNom()}\n
+         Nom : {$this->getName()}\n
          Couleur : {$this->getColor()->getName()}\n
          Niveau d'eau : {$this->getWater()}\n
          Cavalier : {$this->getRider()->getName()}\n
-         Catégorie : {$this->getCategory()->getNom()}\n";
+         Catégorie : {$this->getCategory()->getName()}\n";
     }
 
 

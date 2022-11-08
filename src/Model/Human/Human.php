@@ -115,11 +115,11 @@ abstract class Human
     }
 
     /**
-     * @return string
+     * @return Categorie
      */
-    public function getCategorie(): string
+    public function getCategorie(): Categorie
     {
-        return $this->categorie->getNom();
+        return $this->categorie;
     }
 
     /**
@@ -140,7 +140,7 @@ abstract class Human
          Rue : {$this->getStreet()}\n
          Code postal : {$this->getPostcode()}\n
          Ville : {$this->getCity()}\n
-         Catégorie : {$this->getCategorie()}\n";
+         Catégorie : {$this->getCategorie()->getName()}\n";
     }
 
 

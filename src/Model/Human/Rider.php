@@ -62,8 +62,8 @@ class Rider extends Human
          Rue : {$this->getStreet()}\n
          Code postal : {$this->getPostcode()}\n
          Ville : {$this->getCity()}\n
-         Catégorie : {$this->getCategorie()}\n
-         Type de jeu : {$this->getGameType()->getNom()}\n";
+         Catégorie : {$this->getCategorie()->getName()}\n
+         Type de jeu : {$this->getGameType()->getName()}\n";
     }
 
 }
