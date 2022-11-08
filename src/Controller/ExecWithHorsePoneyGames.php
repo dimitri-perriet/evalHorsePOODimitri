@@ -5,13 +5,11 @@ namespace App\Controller;
 use App\Model\Capabilitie\Cross;
 use App\Model\Capabilitie\Dressage;
 use App\Model\Capabilitie\PoneyGames;
-use App\Model\Capabilitie\Saut;
 use App\Model\Human\Manager;
 use App\Model\Stable;
 
-class ExecWithoutError
+class ExecWithHorsePoneyGames
 {
-
     /**
      * Execute the program
      */
@@ -40,7 +38,7 @@ class ExecWithoutError
 
 
         //Création de chevaux, poney et Shetiland
-        $cheval1 = new \App\Model\Equine\Horse("Lesla", $White, 500, $rider, new Cross());
+        $cheval1 = new \App\Model\Equine\Horse("Lesla", $White, 500, $rider, new PoneyGames());
         $cheval2 = new \App\Model\Equine\Poney("Tesla", $Grey, 200, $rider, new PoneyGames());
         $cheval3 = new \App\Model\Equine\Sheitland("Simbo", $Pie, 501, $rider, new Dressage());
 
@@ -58,4 +56,5 @@ class ExecWithoutError
         $event1->subscribeHorse($cheval2);
         echo $event1;
     }
+
 }

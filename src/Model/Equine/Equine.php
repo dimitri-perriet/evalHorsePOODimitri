@@ -2,6 +2,7 @@
 
 namespace App\Model\Equine;
 
+use App\Model\Capabilitie\Capabilitie;
 use App\Model\Categorie\Categorie;
 use App\Model\Color\Color;
 use App\Model\Human\Rider;
@@ -15,17 +16,19 @@ abstract class Equine
     private Rider $rider;
     private Categorie $category;
     private string $name;
+    private array $capabilitie=[];
     static private int $nbHorse = 1;
 
 
-    public function __construct(string $name, Color $color, int $water, Rider $rider, Categorie $category)
+    public function __construct(string $name, Color $color, int $water, Rider $rider, Categorie $category, Capabilitie $capabilitie)
     {
         $this->setName($name)
             ->setColor($color)
             ->setWater($water)
             ->setRider($rider)
             ->setCategory($category)
-            ->setId($color,$name);
+            ->setId($color,$name)
+            ->setCapabilitie($capabilitie);
         self::$nbHorse++;
     }
 
@@ -152,16 +155,39 @@ abstract class Equine
         return self::$nbHorse;
     }
 
+    /**
+     * @return array
+     */
+    public function getCapabilitie(): array
+    {
+        return $this->capabilitie;
+    }
+
+    /**
+     * @param Capabilitie $capabilitie
+     * @return Equine
+     */
+    private function setCapabilitie(Capabilitie $capabilitie): Equine
+    {
+        $this->capabilitie[] = $capabilitie;
+        return $this;
+    }
+
+
+
     public function __toString(): string
     {
-        return "Détail de l'Equin :\n
+        $string = "Détail de l'Equin :\n
          ID : {$this->getId()}\n
          Nom : {$this->getName()}\n
          Couleur : {$this->getColor()->getName()}\n
          Niveau d'eau : {$this->getWater()}\n
          Cavalier : {$this->getRider()->getName()}\n
-         Catégorie : {$this->getCategory()->getName()}\n";
+         Catégorie : {$this->getCategory()->getName()}\n
+         Capacity : ";
+            foreach ($this->getCapabilitie() as $capabilitie) {
+                $string .= $capabilitie->getName() . " \n";
+            }
+        return $string;
     }
-
-
 }
