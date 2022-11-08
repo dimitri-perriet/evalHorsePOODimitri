@@ -28,13 +28,13 @@ abstract class Event
     public function subscribeHorse(Equine $horse): void
     {
         $this->setTmpWater(0);
-        if (count($this->commitments) < $this->MaxCommitments) {
-            foreach ($this->commitments as $commitment) {
+        if (count($this->getCommitments()) < $this->getMaxCommitments()) {
+            foreach ($this->getCommitments() as $commitment) {
                 if ($commitment->getId() === $horse->getId()) {
                     throw new Exception("Le cheval " . $horse->getId() . " est déjà inscrit.");
                 }
                 $this->tmpWater += $commitment->getWater();
-                if ($this->tmpWater + $horse->getWater() > $this->MaxWater) {
+                if ($this->getTmpWater() + $horse->getWater() > $this->getMaxWater()) {
                     throw new Exception("Le cheval " . $horse->getId() . " ne peut pas être inscrit car l'évenement ne dispose pas de suffisament d'eau.");
                 }
             }
