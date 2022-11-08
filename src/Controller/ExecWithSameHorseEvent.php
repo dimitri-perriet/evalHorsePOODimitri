@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Model\Capabilitie\Cross;
+use App\Model\Capabilitie\Dressage;
+use App\Model\Capabilitie\PoneyGames;
 use App\Model\Human\Manager;
 use App\Model\Stable;
 
@@ -35,9 +38,9 @@ class ExecWithSameHorseEvent
         $White = new \App\Model\Color\White();
 
         //Création de chevaux, poney et Shetiland
-        $cheval1 = new \App\Model\Equine\Horse("Lesla", $White, 500, $rider);
-        $cheval2 = new \App\Model\Equine\Poney("Tesla", $Grey, 200, $rider);
-        $cheval3 = new \App\Model\Equine\Sheitland("Simbo", $Pie, 501, $rider);
+        $cheval1 = new \App\Model\Equine\Horse("Lesla", $White, 500, $rider, new Cross());
+        $cheval2 = new \App\Model\Equine\Poney("Tesla", $Grey, 200, $rider, new PoneyGames());
+        $cheval3 = new \App\Model\Equine\Sheitland("Simbo", $Pie, 501, $rider, new Dressage());
 
 
         echo $cheval1;
