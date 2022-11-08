@@ -151,17 +151,6 @@ abstract class Equine
         return self::$nbHorse;
     }
 
-    /**
-     * @param int $nbHorse
-     */
-    private static function setNbHorse(int $nbHorse): void
-    {
-        self::$nbHorse = $nbHorse;
-    }
-
-
-
-
     public function __toString(): string
     {
         return "Détail de l'Equin :\n
