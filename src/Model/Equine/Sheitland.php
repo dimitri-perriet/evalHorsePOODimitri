@@ -1,6 +1,9 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Equine;
+
+use App\Model\Categorie\SheitlandCategorie;
+use App\Model\Human\Rider;
 
 class Sheitland extends Equine
 {

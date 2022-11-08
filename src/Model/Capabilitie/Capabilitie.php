@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Capabilitie;
 
-abstract class Categorie
+abstract class Capabilitie
 {
-
     // Propriétés
     protected string $nom;
 
@@ -31,4 +30,5 @@ abstract class Categorie
 
         return $this;
     }
+
 }

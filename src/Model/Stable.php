@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use App\Model\Human\Manager;
+
 class Stable
 {
     private string $name;

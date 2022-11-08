@@ -1,6 +1,9 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Human;
+
+use App\Model\Capabilitie\Capabilitie;
+use App\Model\Categorie\RiderCategorie;
 
 class Rider extends Human
 {

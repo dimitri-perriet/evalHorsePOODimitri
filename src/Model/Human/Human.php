@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Human;
+
+use App\Model\Categorie\Categorie;
 
 abstract class Human
 {

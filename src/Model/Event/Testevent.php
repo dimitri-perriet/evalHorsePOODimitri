@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Event;
 
 class Testevent extends Event
 {

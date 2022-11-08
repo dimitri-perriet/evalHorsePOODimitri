@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\Manager;
+use App\Model\Human\Manager;
 use App\Model\Stable;
 
 class ExecWithSameHorseEvent
@@ -24,13 +24,13 @@ class ExecWithSameHorseEvent
         echo $ecurie;
 
         //Création d'un cavalier
-        $rider=new \App\Model\Rider("Julien","Rue de la Plaine","1","75000","Paris", new \App\Model\Saut());
+        $rider=new \App\Model\Human\Rider("Julien","Rue de la Plaine","1","75000","Paris", new \App\Model\Capabilitie\Saut());
         echo $rider;
 
         //Création de chevaux, poney et Shetiland
-        $cheval1 = new \App\Model\Horse("Lesla", "White", 500, $rider);
-        $cheval2 = new \App\Model\Poney("Tesla", "Grey", 200, $rider);
-        $cheval3 = new \App\Model\Sheitland("Simbo", "Pie", 501, $rider);
+        $cheval1 = new \App\Model\Equine\Horse("Lesla", "White", 500, $rider);
+        $cheval2 = new \App\Model\Equine\Poney("Tesla", "Grey", 200, $rider);
+        $cheval3 = new \App\Model\Equine\Sheitland("Simbo", "Pie", 501, $rider);
 
 
         echo $cheval1;
@@ -38,7 +38,7 @@ class ExecWithSameHorseEvent
         echo $cheval3;
 
         //Création d'un événement
-        $event1 = new \App\Model\Testevent(3, 1000);
+        $event1 = new \App\Model\Event\Testevent(3, 1000);
         echo $event1;
 
         //Inscription d'un cheval à un événement

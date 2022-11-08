@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Event;
 
+use App\Model\Equine\Equine;
 use Exception;
 
 abstract class Event

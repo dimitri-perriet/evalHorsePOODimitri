@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Equine;
 
+use App\Model\Categorie\Categorie;
+use App\Model\Human\Rider;
 use Exception;
 
 abstract class Equine
