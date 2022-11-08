@@ -27,10 +27,18 @@ class ExecWithoutError
         $rider=new \App\Model\Human\Rider("Julien","Rue de la Plaine","1","75000","Paris", new \App\Model\Capabilitie\Saut());
         echo $rider;
 
+        //Création des couleurs
+        $Alzan = new \App\Model\Color\Alzan();
+        $Bai = new \App\Model\Color\Bai();
+        $Grey = new \App\Model\Color\Grey();
+        $Pie = new \App\Model\Color\Pie();
+        $White = new \App\Model\Color\White();
+
+
         //Création de chevaux, poney et Shetiland
-        $cheval1 = new \App\Model\Equine\Horse("Lesla", "White", 500, $rider);
-        $cheval2 = new \App\Model\Equine\Poney("Tesla", "Grey", 200, $rider);
-        $cheval3 = new \App\Model\Equine\Sheitland("Simbo", "Pie", 501, $rider);
+        $cheval1 = new \App\Model\Equine\Horse("Lesla", $White, 500, $rider);
+        $cheval2 = new \App\Model\Equine\Poney("Tesla", $Grey, 200, $rider);
+        $cheval3 = new \App\Model\Equine\Sheitland("Simbo", $Pie, 501, $rider);
 
         echo $cheval1;
         echo $cheval2;

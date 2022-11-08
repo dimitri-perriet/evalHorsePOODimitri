@@ -3,13 +3,14 @@
 namespace App\Model\Equine;
 
 use App\Model\Categorie\Categorie;
+use App\Model\Color\Color;
 use App\Model\Human\Rider;
 use Exception;
 
 abstract class Equine
 {
     private string $id;
-    private string $color;
+    private Color $color;
     private int $water;
     private Rider $rider;
     private Categorie $category;
@@ -17,7 +18,7 @@ abstract class Equine
     static private int $nbHorse = 1;
 
 
-    public function __construct(string $nom, string $color, int $water, Rider $rider, Categorie $category)
+    public function __construct(string $nom, Color $color, int $water, Rider $rider, Categorie $category)
     {
         $this->setNom($nom)
             ->setColor($color)
@@ -41,25 +42,25 @@ abstract class Equine
      * @param string $color, string $nom
      * @return Equine
      */
-    private function setId(string $color, string $nom): Equine
+    private function setId(Color $color, string $nom): Equine
     {
-        $this->id = "000-" . $nom[0] . "-" . $color[0] . "-" . $this->getnbHorse();
+        $this->id = "000-" . $nom[0] . "-" . $color->getName()[0] . "-" . $this->getnbHorse();
         return $this;
     }
 
     /**
-     * @return string
+     * @return Color
      */
-    public function getColor(): string
+    public function getColor(): Color
     {
         return $this->color;
     }
 
     /**
-     * @param string $color
+     * @param Color $color
      * @return Equine
      */
-    private function setColor(string $color): Equine
+    private function setColor(Color $color): Equine
     {
         $this->color = $color;
         return $this;
@@ -156,7 +157,7 @@ abstract class Equine
         return "Détail de l'Equin :\n
          ID : {$this->getId()}\n
          Nom : {$this->getNom()}\n
-         Couleur : {$this->getColor()}\n
+         Couleur : {$this->getColor()->getName()}\n
          Niveau d'eau : {$this->getWater()}\n
          Cavalier : {$this->getRider()->getName()}\n
          Catégorie : {$this->getCategory()->getNom()}\n";
